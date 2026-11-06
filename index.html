@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Общий список</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Общий список</h1>
+
+    <p id="message" class="message" role="alert" hidden></p>
+
+    <section id="signed-out" hidden>
+      <p>Войдите, чтобы видеть список и добавлять записи.</p>
+      <div class="buttons">
+        <button id="login-github" type="button">Войти с помощью GitHub</button>
+        <button id="login-google" type="button">Войти с помощью Google</button>
+      </div>
+    </section>
+
+    <section id="signed-in" hidden>
+      <div class="user">
+        <span>Вы вошли как <strong id="user-name"></strong></span>
+        <button id="logout" type="button">Выйти</button>
+      </div>
+
+      <form id="item-form">
+        <label for="item-text">Новая запись</label>
+        <div class="row">
+          <input id="item-text" type="text" maxlength="500" required autocomplete="off">
+          <button type="submit">Добавить</button>
+        </div>
+      </form>
+
+      <p id="empty" hidden>Записей пока нет.</p>
+      <ul id="items"></ul>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
